@@ -1,0 +1,50 @@
+:root {
+  /* =========================
+     COLORES
+  ========================== */
+
+  --color-river: #123f46;
+  --color-river-dark: #0b2d33;
+
+  --color-moriche: #315a46;
+
+  --color-sand: #e9dfcf;
+  --color-sunset: #d49a4c;
+
+  --color-cream: #f7f3eb;
+  --color-white: #ffffff;
+
+  --color-text: #17201d;
+  --color-text-soft: #69716d;
+
+  /* =========================
+     LAYOUT
+  ========================== */
+
+  --container-width: 1240px;
+  --header-height: 96px;
+
+  /* =========================
+     ESPACIADO
+  ========================== */
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+
+  /* =========================
+     BORDES
+  ========================== */
+
+  --radius-md: 18px;
+  --radius-lg: 32px;
+
+  /* =========================
+     TRANSICIONES
+  ========================== */
+
+  --transition-fast: 180ms ease;
+  --transition-normal: 300ms ease;
+}

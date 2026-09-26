@@ -1,0 +1,64 @@
+body {
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: clamp(4.5rem, 11vw, 10rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+h2 {
+  font-size: clamp(2.7rem, 5.5vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+}
+
+p {
+  font-size: 1.05rem;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--color-moriche);
+}
+
+.section-lead {
+  max-width: 760px;
+
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+
+  color: var(--color-text-soft);
+}

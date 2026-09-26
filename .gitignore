@@ -1,0 +1,14 @@
+# Local system and editor files
+/Microsoft/
+/.codex/
+/.agents/
+/.vscode/
+.DS_Store
+Thumbs.db
+
+# Local configuration and dependencies
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
