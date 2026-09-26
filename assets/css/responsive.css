@@ -71,10 +71,6 @@
     background-position: 62% center;
   }
 
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-
   .river-feature {
     padding: 4rem 2rem;
   }
@@ -127,8 +123,12 @@
     padding-block: 5rem;
   }
 
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
   .experience-card {
-    min-height: 300px;
+    min-height: 200px;
   }
 
   .river-feature {
