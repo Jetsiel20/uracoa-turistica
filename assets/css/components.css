@@ -31,16 +31,15 @@ body {
 ========================== */
 
 .site-header {
-  position: absolute;
-
-  top: 0;
-  left: 0;
+  position: relative;
 
   z-index: 1000;
 
   width: 100%;
 
-  color: var(--color-white);
+  background: var(--color-cream);
+  color: var(--color-river);
+  border-bottom: 1px solid rgba(18, 63, 70, 0.12);
 }
 
 .navbar {
@@ -82,7 +81,7 @@ body {
 
   align-items: center;
 
-  gap: 2.2rem;
+  gap: clamp(1rem, 2.4vw, 2.2rem);
 }
 
 .desktop-nav a {
@@ -92,11 +91,6 @@ body {
 
   font-size: 1.0625rem;
   font-weight: 600;
-
-  opacity: 1;
-
-  transition:
-    opacity var(--transition-fast);
 }
 
 .desktop-nav a::after {
@@ -117,13 +111,33 @@ body {
   transition: transform var(--transition-normal);
 }
 
-.desktop-nav a:hover {
-  opacity: 1;
-}
-
 .desktop-nav a:hover::after,
 .desktop-nav a:focus-visible::after {
   transform: scaleX(1);
+}
+
+.desktop-nav .nav-visit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--color-river);
+  color: var(--color-cream);
+  text-align: center;
+}
+
+.desktop-nav .nav-visit::after {
+  content: none;
+}
+
+.desktop-nav .nav-visit:hover {
+  background: var(--color-river-dark);
+}
+
+.desktop-nav .nav-visit:focus-visible {
+  outline-color: var(--color-river);
 }
 
 
@@ -172,11 +186,11 @@ body {
 
   align-items: center;
 
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: calc(100vh - var(--header-height) - 1px);
+  min-height: calc(100svh - var(--header-height) - 1px);
 
-  /* Reserve space for the absolute header, including on short screens. */
-  padding-top: calc(var(--header-height) + var(--space-md));
+  /* The header occupies its own space above the hero. */
+  padding-top: var(--space-md);
   padding-bottom: max(8rem, env(safe-area-inset-bottom));
 
   overflow: hidden;
@@ -193,9 +207,9 @@ body {
 
 .hero-media {
   position: absolute;
-  inset: -8% 0;
+  inset: 0;
 
-  background-image: url("../imagenes/hero.webp");
+  background-image: url("../imagenes/hero-1.webp");
 
   background-size: cover;
   background-position: center center;
@@ -204,6 +218,19 @@ body {
   pointer-events: none;
 }
 
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: var(--slide-position, center);
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.hero-slide.is-visible {
+  opacity: 1;
+}
 
 /* =========================
    OVERLAY
@@ -215,8 +242,8 @@ body {
   inset: 0;
 
   background:
-    linear-gradient(90deg, rgba(4, 22, 24, 0.72), rgba(4, 22, 24, 0.25) 48%, transparent 78%),
-    linear-gradient(180deg, rgba(4, 22, 24, 0.4), transparent 30%, rgba(4, 22, 24, 0.22));
+    linear-gradient(90deg, rgba(4, 22, 24, 0.60), rgba(4, 22, 24, 0.18) 48%, transparent 78%),
+    linear-gradient(180deg, rgba(4, 22, 24, 0.25), transparent 30%, rgba(4, 22, 24, 0.15));
 
   pointer-events: none;
 }
@@ -237,33 +264,25 @@ body {
 
 .hero-location {
   display: inline-block;
-
-  margin-bottom: 1.2rem;
-
-  font-size: 0.72rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-
-  letter-spacing: 0.25em;
-
+  letter-spacing: 0.18em;
   color: var(--color-sand);
 }
 
 .hero h1 {
   max-width: 900px;
-
-  margin-bottom: 0.75rem;
-
-  font-size: clamp(4.2rem, 12vw, 10rem);
+  margin-bottom: 0.5rem;
+  font-size: clamp(3rem, 8vw, 6.5rem);
 }
 
 .hero p {
-  max-width: 22ch;
-
-  margin-bottom: 2.3rem;
-
-  font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+  max-width: 26ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
   font-weight: 300;
-
+  line-height: 1.45;
 }
 
 
@@ -297,6 +316,9 @@ body {
 }
 
 .hero .btn-primary {
+  min-height: 48px;
+  padding-inline: 1.3rem;
+  font-size: 0.875rem;
   background: var(--color-cream);
   color: var(--color-river);
 }
@@ -367,45 +389,6 @@ body {
 
 .scroll-indicator:hover {
   opacity: 1;
-}
-
-
-/* =========================
-   INTRO
-========================== */
-
-.intro {
-  background: var(--color-cream);
-}
-
-.section.intro {
-  padding-block: clamp(3rem, 5vw, var(--space-lg));
-}
-
-.intro-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.intro-content .section-lead {
-  margin-bottom: 0;
-}
-
-.intro-image {
-  width: 100%;
-  height: clamp(15rem, 34vw, 26.25rem);
-  object-fit: cover;
-  object-position: center 65%;
-  border-radius: var(--radius-md);
-}
-
-.intro h2 {
-  max-width: 900px;
-
-  margin-bottom: var(--space-sm);
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
 }
 
 
