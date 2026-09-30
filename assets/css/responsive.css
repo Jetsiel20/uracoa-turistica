@@ -52,16 +52,14 @@
     min-height: 44px;
   }
 
-  .hero {
-    padding-bottom: max(5rem, env(safe-area-inset-bottom));
+  .hero-content {
+    grid-area: 2 / 1;
+    padding-block: 2rem;
   }
 
-  .hero-media {
-    background-position: 62% center;
-  }
-
-  .hero-slide {
-    background-position: var(--slide-position-mobile, var(--slide-position, center));
+  .hero-overlay,
+  .hero .scroll-indicator {
+    display: none;
   }
 
   .river-feature {
@@ -95,21 +93,8 @@
     text-align: center;
   }
 
-  .hero {
-    align-items: flex-start;
-    padding-top: max(2rem, 7svh);
-  }
-
-  .hero-overlay {
-    background: linear-gradient(180deg, rgba(4, 22, 24, 0.55), rgba(4, 22, 24, 0.58) 38%, rgba(4, 22, 24, 0.1) 72%);
-  }
-
   .btn {
     width: 100%;
-  }
-
-  .scroll-indicator {
-    display: none;
   }
 
   .section {
@@ -145,17 +130,8 @@
     margin-bottom: 1rem;
   }
 
-  .hero {
-    padding-top: var(--space-md);
-    padding-bottom: max(var(--space-md), env(safe-area-inset-bottom));
-  }
-
   .hero-actions {
     flex-direction: row;
-  }
-
-  .hero-actions .btn {
-    width: auto;
   }
 
   .hero .scroll-indicator {

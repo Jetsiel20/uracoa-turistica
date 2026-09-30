@@ -182,16 +182,9 @@ body {
 .hero {
   position: relative;
 
-  display: flex;
-
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-
-  min-height: calc(100vh - var(--header-height) - 1px);
-  min-height: calc(100svh - var(--header-height) - 1px);
-
-  /* The header occupies its own space above the hero. */
-  padding-top: var(--space-md);
-  padding-bottom: max(8rem, env(safe-area-inset-bottom));
 
   overflow: hidden;
 
@@ -205,15 +198,20 @@ body {
    FONDO HERO
 ========================== */
 
+.hero-media,
+.hero-slide {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .hero-media {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  grid-area: 1 / 1;
+  width: 100%;
+  aspect-ratio: 1672 / 941;
 
   background-image: url("../imagenes/hero-1.webp");
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 
   pointer-events: none;
 }
@@ -222,8 +220,6 @@ body {
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: var(--slide-position, center);
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
@@ -255,6 +251,8 @@ body {
 
 .hero-content {
   position: relative;
+  grid-area: 1 / 1;
+  padding-block: 3rem;
 
   z-index: 2;
 

@@ -154,3 +154,30 @@ Actualizado: 26 de septiembre de 2026.
 ## Entrada de tarjetas más lenta: 27 de septiembre de 2026
 - Duración aumentada de 550 a 900 ms por solicitud del usuario. Conservados desplazamiento de 12 px, activación al 30 %, retraso de 80 ms por fila y reproducción única.
 - Cambio limitado a animations.css; git diff --check correcto. Pendiente valoración visual del ritmo. Local, sin commit, push ni despliegue.
+
+## Revisión responsiva del hero: 30 de septiembre de 2026
+- Revisados los estilos locales y consultados por HTTP components.css y responsive.css del sitio público. Las reglas del hero publicadas confirman min-height ligado al viewport y background-size: cover en la foto inicial y las transiciones.
+- Causa del recorte: fotografías horizontales en un contenedor alto, especialmente en móviles. El ajuste de posición a 62 % en la primera imagen solo desplaza el recorte; no muestra la fotografía completa.
+- Propuesta: conservar la proporción de las imágenes en el área fotográfica y colocar el contenido debajo en pantallas estrechas para mostrar las fotos completas sin deformación. Pendiente implementar y comprobar visualmente en navegador; esta revisión fue de código y HTTP.
+- Git al iniciar: limpio, main y origin/main en d2236b1. La nota anterior estaba desactualizada respecto a los commits. No se verificó el identificador del despliegue de Vercel.
+- Sin cambios en código, commit, push ni despliegue en esta revisión; solo actualización local de esta nota.
+
+## Hero sin recorte: 30 de septiembre de 2026
+- Aplicada la propuesta aprobada: hero en cuadrícula, zona fotográfica con proporción 1672/941 y fondos contain sin repetición en la imagen inicial y las diapositivas. Retirada la altura mínima dependiente de la pantalla.
+- Hasta 900 px, texto y acciones en una segunda fila sobre fondo verde; sin degradado ni indicador sobre la foto. En escritorio se conserva el contenido superpuesto. Eliminados ajustes antiguos de posición y padding que interferían con la nueva estructura.
+- Verificación: dimensiones originales de los cuatro WebP confirmadas; mediciones en Chrome a 320, 390, 600, 601, 768, 900, 901, 1440, 1920 y 844 px (este último horizontal). Proporción correcta, contenido debajo hasta 900 px y sin desbordamiento horizontal en todos los casos. Menú móvil abre correctamente. La prueba observó dos diapositivas añadidas con contain; no verificó el final completo de la secuencia. JavaScript y tiempos no modificados.
+- Captura revisada para la composición móvil; Chrome headless necesitó ejecución fuera del aislamiento. La captura por sí sola no valida el ancho de viewport; las medidas anteriores se tomaron en iframes de dimensiones explícitas.
+- Cambios locales en components.css y responsive.css; sin commit, push ni despliegue. Pendiente publicar para que la corrección aparezca en el sitio en vivo.
+
+## Limpieza tras el ajuste responsivo: 30 de septiembre de 2026
+- Retirados mobilePosition y la asignación de --slide-position-mobile, que quedaron sin consumidor al eliminar el encuadre móvil. Simplificado también el encuadre centrado común: ya no necesita position ni --slide-position por fotografía.
+- Agrupadas background-size, background-position y background-repeat de hero-media y hero-slide en una sola regla, conservando contain y centrado.
+- Eliminadas dos reglas redundantes: ocultación del indicador a 600 px (ya cubierta hasta 900 px) y width:auto del botón en horizontal (ya cubierto por la regla móvil o el valor inicial).
+- Retirado el comentario obsoleto de fotos 3 y 4 pendientes. Se conserva la ocultación del indicador en ventanas horizontales bajas porque también aplica por encima de 900 px.
+- Verificación: sintaxis JavaScript y git diff --check correctos; búsqueda sin referencias restantes a las variables de encuadre retiradas y revisión estática de la cascada. No se repitió navegador en esta limpieza de reglas equivalentes; no se cambiaron tiempos ni lógica del carrusel.
+- Cambios exclusivamente locales; sin commit, push ni despliegue.
+
+## Prioridad móvil y degradado publicado: 30 de septiembre de 2026
+- El usuario establece la experiencia móvil y la visibilidad de las fotografías como prioridad de diseño.
+- Nueva consulta HTTP confirma que el CSS público todavía aplica el degradado oscuro móvil anterior (opacidades 0.55 / 0.58 / 0.1). El CSS local ya oculta hero-overlay hasta 900 px y coloca el texto debajo.
+- No se añadieron reglas redundantes ni se modificó el diseño en este turno: la corrección está local, pendiente de publicación. Sin commit, push ni despliegue.

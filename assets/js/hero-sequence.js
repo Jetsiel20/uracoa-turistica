@@ -1,9 +1,8 @@
 // La primera fotografía permanece en el CSS como respaldo sin JavaScript.
-// Completar los dos src pendientes cuando estén elegidas las fotos 3 y 4.
 const nextScenes = [
-  { src: './assets/imagenes/hero-2.webp', position: 'center', mobilePosition: 'center' },
-  { src: './assets/imagenes/hero-3.webp', position: 'center', mobilePosition: 'center' },
-  { src: './assets/imagenes/hero-4.webp', position: 'center', mobilePosition: 'center' },
+  { src: './assets/imagenes/hero-2.webp' },
+  { src: './assets/imagenes/hero-3.webp' },
+  { src: './assets/imagenes/hero-4.webp' },
 ];
 
 export function initHeroSequence() {
@@ -54,8 +53,6 @@ export function initHeroSequence() {
       const slide = document.createElement('div');
       slide.className = 'hero-slide';
       slide.style.backgroundImage = `url("${scene.src}")`;
-      slide.style.setProperty('--slide-position', scene.position);
-      slide.style.setProperty('--slide-position-mobile', scene.mobilePosition);
       media.append(slide);
       // Establish the transparent state before starting the crossfade.
       void slide.offsetWidth;
