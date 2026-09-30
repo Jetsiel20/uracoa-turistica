@@ -175,7 +175,7 @@
           </h2>
 
           <p class="section-lead">
-            Su arquitectura, su historia, sus tradiciones y su rio
+            Su arquitectura, su historia, sus tradiciones y su río:
             cuatro formas de empezar a conocer Uracoa.
           </p>
 
@@ -183,7 +183,7 @@
 
         <div class="experience-grid">
 
-          <article class="experience-card experience-card--image">
+          <article class="experience-card">
             <img
               class="experience-card-image"
               src="./assets/imagenes/obelisco.webp"
@@ -196,7 +196,7 @@
             <h3>Arquitectura</h3>
           </article>
 
-          <article class="experience-card experience-card--image">
+          <article class="experience-card">
             <img
               class="experience-card-image"
               src="./assets/imagenes/plaza-bolivar.webp"
@@ -209,7 +209,7 @@
             <h3>Historia</h3>
           </article>
 
-          <article class="experience-card experience-card--image">
+          <article class="experience-card">
             <img
               class="experience-card-image"
               src="./assets/imagenes/iglesia.webp"
@@ -222,9 +222,9 @@
             <h3>Cultura</h3>
           </article>
 
-          <article class="experience-card experience-card--image">
+          <article class="experience-card">
             <img
-              class="experience-card-image experience-card-image--river"
+              class="experience-card-image"
               src="./assets/imagenes/rio.webp"
               alt="Visitantes disfrutando del río y sus orillas, rodeados de vegetación."
               width="1672"
@@ -239,6 +239,152 @@
 
       </div>
 
+    </section>
+
+
+    <!-- =========================
+         PLANIFICA TU VISITA
+    ========================== -->
+
+    <section id="visita" class="section visit" aria-labelledby="visit-title">
+      <div class="container visit-layout">
+        <div class="visit-copy">
+          <span class="section-label">Cómo llegar</span>
+          <h2 id="visit-title">Tu camino hacia Uracoa.</h2>
+          <p class="section-lead">
+            Encuentra Uracoa en el mapa y consulta cómo llegar
+            desde tu punto de partida.
+          </p>
+          <p class="visit-destination">
+            <strong>Un punto para comenzar</strong>
+            Plaza Bolívar de Uracoa<br>
+            Monagas, Venezuela
+          </p>
+          <a
+            class="btn visit-directions"
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=8.99859%2C-62.3531&amp;travelmode=driving"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cómo llegar en Google Maps <span aria-hidden="true">↗</span>
+            <span class="visit-link-hint">(abre otra pestaña)</span>
+          </a>
+          <p class="visit-note">Elige tu punto de salida en Google Maps para consultar la ruta.</p>
+        </div>
+
+        <div class="visit-map">
+          <iframe
+            title="Mapa de ubicación de la Plaza Bolívar de Uracoa, Monagas"
+            src="https://www.google.com/maps?q=8.99859%2C-62.3531&amp;z=15&amp;output=embed&amp;hl=es"
+            width="640"
+            height="440"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <p class="visit-map-caption">Plaza Bolívar · Tu referencia para llegar a Uracoa</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         COMER Y DESCANSAR
+    ========================== -->
+
+    <section id="comer-descansar" class="section stay" aria-labelledby="stay-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Tu escapada</span>
+          <h2 id="stay-title">Dónde comer y descansar.</h2>
+          <p class="section-lead">Estamos reuniendo opciones para comer y alojarte en Uracoa.</p>
+        </div>
+        <div id="stay-preview"></div>
+        <!-- Borrador inerte: solo se muestra en file:// o en un servidor local. -->
+        <template id="stay-draft">
+          <p class="stay-draft-note">Borrador local · Fotografías y datos pendientes de confirmar.</p>
+            <div class="stay-group">
+              <h3>Dónde comer</h3>
+              <div class="stay-grid">
+              <article class="stay-card">
+                <div class="stay-photo-placeholder" aria-hidden="true">Fotografía pendiente</div>
+                <div class="stay-card-body">
+                  <span class="section-label">Restaurante</span>
+                  <h4>Nombre pendiente</h4>
+                  <p>Descripción por confirmar.</p>
+                  <dl>
+                    <dt>Ubicación</dt><dd>Pendiente</dd>
+                    <dt>Horario y tipo de comida</dt><dd>Por confirmar</dd>
+                    <dt>Contacto</dt><dd>Pendiente</dd>
+                  </dl>
+                  <!-- Agregar enlaces reales de ubicacion y contacto al confirmar los datos. -->
+                </div>
+              </article>
+              <article class="stay-card">
+                <div class="stay-photo-placeholder" aria-hidden="true">Fotografía pendiente</div>
+                <div class="stay-card-body">
+                  <span class="section-label">Restaurante</span>
+                  <h4>Nombre pendiente</h4>
+                  <p>Descripción por confirmar.</p>
+                  <dl>
+                    <dt>Ubicación</dt><dd>Pendiente</dd>
+                    <dt>Horario y tipo de comida</dt><dd>Por confirmar</dd>
+                    <dt>Contacto</dt><dd>Pendiente</dd>
+                  </dl>
+                  <!-- Agregar enlaces reales de ubicacion y contacto al confirmar los datos. -->
+                </div>
+              </article>
+              </div>
+            </div>
+            <div class="stay-group">
+              <h3>Dónde alojarte</h3>
+              <div class="stay-grid">
+              <article class="stay-card">
+                <div class="stay-photo-placeholder" aria-hidden="true">Fotografía pendiente</div>
+                <div class="stay-card-body">
+                  <span class="section-label">Hotel</span>
+                  <h4>Nombre pendiente</h4>
+                  <p>Descripción por confirmar.</p>
+                  <dl>
+                    <dt>Ubicación</dt><dd>Pendiente</dd>
+                    <dt>Servicios</dt><dd>Por confirmar</dd>
+                    <dt>Contacto</dt><dd>Pendiente</dd>
+                  </dl>
+                  <!-- Agregar enlaces reales de ubicacion y contacto al confirmar los datos. -->
+                </div>
+              </article>
+              <article class="stay-card">
+                <div class="stay-photo-placeholder" aria-hidden="true">Fotografía pendiente</div>
+                <div class="stay-card-body">
+                  <span class="section-label">Hotel</span>
+                  <h4>Nombre pendiente</h4>
+                  <p>Descripción por confirmar.</p>
+                  <dl>
+                    <dt>Ubicación</dt><dd>Pendiente</dd>
+                    <dt>Servicios</dt><dd>Por confirmar</dd>
+                    <dt>Contacto</dt><dd>Pendiente</dd>
+                  </dl>
+                  <!-- Agregar enlaces reales de ubicacion y contacto al confirmar los datos. -->
+                </div>
+              </article>
+              <article class="stay-card">
+                <div class="stay-photo-placeholder" aria-hidden="true">Fotografía pendiente</div>
+                <div class="stay-card-body">
+                  <span class="section-label">Posada</span>
+                  <h4>Nombre pendiente</h4>
+                  <p>Descripción por confirmar.</p>
+                  <dl>
+                    <dt>Ubicación</dt><dd>Pendiente</dd>
+                    <dt>Servicios</dt><dd>Por confirmar</dd>
+                    <dt>Contacto</dt><dd>Pendiente</dd>
+                  </dl>
+                  <!-- Agregar enlaces reales de ubicacion y contacto al confirmar los datos. -->
+                </div>
+              </article>
+              </div>
+            </div>
+        </template>
+      </div>
     </section>
 
 
@@ -390,37 +536,6 @@
 
 
     <!-- =========================
-         PLANIFICA TU VISITA
-    ========================== -->
-
-    <section
-      id="visita"
-      class="section visit"
-    >
-
-      <div class="container">
-
-        <span class="section-label">
-          Tu viaje
-        </span>
-
-        <h2>
-          Planifica tu visita.
-        </h2>
-
-        <p class="section-lead">
-          Descubre cómo llegar, qué lugares visitar
-          y cómo vivir Uracoa a tu ritmo.
-        </p>
-
-        <p>Próximamente encontrarás aquí la información sobre cómo llegar.</p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
          GALERÍA
     ========================== -->
 
@@ -506,6 +621,8 @@
   <!-- =========================
        JAVASCRIPT
   ========================== -->
+
+  <script src="./assets/js/stay-preview.js" defer></script>
 
   <script
     type="module"

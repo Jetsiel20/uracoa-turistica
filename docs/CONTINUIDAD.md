@@ -181,3 +181,60 @@ Actualizado: 26 de septiembre de 2026.
 - El usuario establece la experiencia móvil y la visibilidad de las fotografías como prioridad de diseño.
 - Nueva consulta HTTP confirma que el CSS público todavía aplica el degradado oscuro móvil anterior (opacidades 0.55 / 0.58 / 0.1). El CSS local ya oculta hero-overlay hasta 900 px y coloca el texto debajo.
 - No se añadieron reglas redundantes ni se modificó el diseño en este turno: la corrección está local, pendiente de publicación. Sin commit, push ni despliegue.
+
+## Push y publicacion verificada: 30 de septiembre de 2026
+- Commit 2b60712 (Corrige el hero responsivo y muestra fotos completas en movil) creado y subido a origin/main por solicitud del usuario.
+- Verificacion posterior por HTTP: components.css, responsive.css y hero-sequence.js publicos responden 200 y coinciden con los archivos locales del commit (normalizando saltos de linea). La correccion ya esta servida en https://uracoa-turistica.vercel.app/.
+- Sintaxis JavaScript y git diff --check correctos antes del commit. No se repitio la prueba visual en el despliegue; se verificaron los archivos publicados.
+- main quedo sincronizada con origin/main. Esta anotacion posterior es local y no forma parte del commit publicado.
+
+## Aprobación visual y guía de diseño: 30 de septiembre de 2026
+- El usuario revisó el sitio en vivo tras el push 2b60712 y aprobó las imágenes del hero: «están perfectas, así debe ser toda la página».
+- Dirección para próximos cambios: priorizar la experiencia móvil, fotografías protagonistas y completas, sin oscurecimiento innecesario, textos legibles y navegación sencilla. Mantener una identidad propia de Uracoa y una experiencia cuidada y coherente en toda la página.
+- Conservar el hero aprobado: en móvil, fotografía sin degradado oscuro y contenido debajo. Usarlo como referencia de calidad al trabajar las demás secciones, sin interpretar esta preferencia como una solicitud de rediseñarlas todas ahora.
+- Forma de colaborar: el usuario está aprendiendo; explicar con claridad el porqué de los cambios y avanzar paso a paso. «Ing» se refiere al asistente, no al usuario.
+- Estado: código del hero subido en 2b60712 y archivos del despliegue verificados por HTTP; aprobación visual del usuario recibida después. Solo la nota de continuidad tiene cambios locales pendientes de commit/push. No se modificó código en este turno.
+- Verificación de esta actualización: contrastados estado de Git y último commit; git diff --check.
+
+
+## Tarjetas con fotos completas: 30 de septiembre de 2026
+- Aplicada la propuesta autorizada para Una tierra por descubrir: fotos con ancho completo y altura proporcional, sin degradados; titulos debajo sobre fondo crema y texto verde. Conservadas dos columnas por encima de 600 px y una hasta 600 px.
+- Retirados posicionamiento absoluto, encuadres, alturas minimas y clases modificadoras que quedaron sin uso. Corregido el texto introductorio (tilde de rio y dos puntos). Hero, nav y animaciones sin cambios.
+- Verificacion estatica: cuatro tarjetas e imagenes con dimensiones reales coincidentes con HTML, IDs unicos, anclas validas, llaves CSS equilibradas y git diff --check correcto. No se ejecuto navegador; pendiente valoracion visual del usuario en la vista local.
+- Cambios locales en index.html, components.css y responsive.css; sin commit, push ni despliegue.
+
+## Propuesta de mapa: 30 de septiembre de 2026
+- Usuario solicita analizar e investigar un bloque de como llegar debajo de las cuatro tarjetas; no autoriza implementacion en este turno.
+- Propuesta: trasladar y desarrollar Planifica tu visita (conservar id=visita) antes de Historia, con fondo crema, texto breve, mapa real y boton Como llegar en Google Maps. En movil, contenido y mapa apilados; en escritorio, dos columnas. Evitar duplicar el bloque actual de visita.
+- Consultadas documentacion oficial de Maps URLs (https://developers.google.com/maps/documentation/urls/get-started) y ayuda para insertar mapas (https://support.google.com/maps/answer/11471036). Enlace de indicaciones sin clave API; mapa mediante funcion de compartir e insertar. Pendiente validar punto exacto de llegada en Uracoa antes de implementarlo; no fijar tiempos o distancias sin verificar.
+- Solo analisis y nota local; sin cambios de codigo, commit, push ni despliegue en este turno. Git muestra ademas un cambio del usuario en assets/imagenes/obelisco.webp, que se conserva.
+
+## Bloque de ruta aplicado: 30 de septiembre de 2026
+- Autorizada y aplicada la seccion Tu camino hacia Uracoa tras las cuatro tarjetas y antes de Historia. Trasladado el bloque visita, conservando su ID y enlace del nav; retirado el aviso anterior de proxima disponibilidad.
+- Fondo crema, texto verde, referencia Plaza Bolivar, boton de indicaciones Google Maps en nueva pestana con aviso accesible, mapa diferido con titulo y pie visible. Una columna hasta 900 px, dos por encima. No se alteraron hero, nav ni JavaScript.
+- Destino cartografico 8.99859,-62.3531 consultado en https://mapcarta.com/W691525685; corroborada la existencia de la plaza en Waze. Mapa mediante URL q/output=embed (no codigo pb de Compartir), y enlace de ruta Maps URLs con las mismas coordenadas. No se indican tiempos, distancias ni condiciones de carretera.
+- Verificacion: HTML con IDs unicos y anclas validas, destino coincidente, orden de secciones y CSS; git diff --check correcto. Chrome fuera del aislamiento midio 320,390,600,601,900,901,1440 px, sin desbordamientos, boton dentro del contenedor y columnas correctas. Para medir el diseno se sustituyo solo en el documento temporal el contenido remoto del iframe por about:blank; esas medidas no validan la cartografia renderizada. URL real del mapa comprobada por HTTP 200 con contenido embed. Pendiente revision visual del mapa cargado en la vista local.
+- El usuario establece siguientes bloques: hoteles y restaurantes, luego historia breve; analizar viabilidad y contenido antes de implementar cada uno. No implementados en este turno.
+- Cambios locales en index.html, components.css y responsive.css; sin commit, push ni despliegue. Conservado el cambio previo del usuario en obelisco.webp.
+
+## Revision de codigo y limpieza: 30 de septiembre de 2026
+- Solicitada revision de codigo muerto, duplicidad y malas practicas. Revisados HTML, CSS y los cuatro modulos JS actuales.
+- Limpieza limitada a components.css: retirados position:relative de brand sin dependientes posicionados, display:block de experience-card-image ya cubierto por reset.css y colores base de btn-primary siempre sustituidos por .hero .btn-primary (unico uso actual). Conservados los estilos hover y de foco.
+- Sin nuevas incidencias funcionales identificadas en la revision estatica. Se mantienen fallbacks sin JavaScript, estados dinamicos, variantes responsivas y movimiento reducido. uracoa-descubre.webp sigue sin uso, conservada expresamente para reutilizacion. No se modificaron imagenes ni JavaScript.
+- Verificacion: sintaxis Node de los cuatro modulos, IDs unicos, anclas y referencias ARIA validas, archivos/importaciones existentes, dimensiones HTML coincidentes con las cuatro fotos, variables CSS utilizadas y git diff --check correctos. No se repitio navegador por tratarse de declaraciones redundantes o sin efecto; no equivale a una nueva prueba funcional completa.
+- Usuario aprobo visualmente el bloque del mapa tras su implementacion. Siguientes bloques pendientes de analisis: hoteles/restaurantes e historia breve. Limpieza local, sin commit, push ni despliegue.
+
+## Analisis de restaurantes y hoteles: 30 de septiembre de 2026
+- El usuario indica conocer dos hoteles y dos restaurantes en Uracoa; solicita investigar como implementar el bloque. No se ha autorizado su implementacion aun.
+- Busquedas publicas no permitieron identificar con confianza los cuatro negocios. El directorio https://gelvez.com.ve/uracoa/hoteles/ declara no tener registros locales y ofrece otras localidades; no inferir que no existen hoteles. Otros resultados mezclan Boca de Uracoa, campamentos del Delta y localidades vecinas.
+- Propuesta: despues de la ruta, un bloque Donde comer y descansar, con dos grupos visibles (dos restaurantes y dos alojamientos), tarjetas con foto completa, nombre, descripcion breve, ubicacion y contacto. Una columna movil y dos escritorio; HTML/CSS existentes, sin carrusel, filtros ni sistema propio de reservas.
+- Pendiente recibir nombres de los cuatro establecimientos para investigar fuentes propias, confirmar actividad, contactos, ubicaciones, servicios y fotos antes de publicar. No inventar precios, estrellas ni comodidades. Solo nota local; sin cambios de web, commit, push ni despliegue.
+
+## Estructura de comer y descansar: 30 de septiembre de 2026
+- Usuario confirma dos hoteles y una posada, sin nombres ni fotos; restaurantes pendientes de material. Autorizada preparacion del bloque bajo el mapa.
+- Agregada seccion comer-descansar antes de Historia, con aviso publico de contenido en preparacion y template inerte con cinco fichas: dos espacios de restaurante, dos hoteles y una posada. Fotos neutras, nombres/descripciones/ubicaciones/contactos pendientes; sin enlaces ficticios, imagenes rotas ni servicios inventados.
+- stay-preview.js (script clasico diferido, independiente de los modulos existentes) muestra el template solo en file:, localhost, 127.0.0.1 o [::1]. En dominios publicos y sin JS permanece el aviso, sin fichas visibles. Es control de presentacion, no almacenamiento privado; el template forma parte del HTML.
+- Reutilizada la cuadricula CSS de experiencias para stay-grid: una columna hasta 600 px y dos por encima. Estilos nuevos limitados al bloque. Hero, mapa, nav, imagenes y animaciones anteriores conservados.
+- Verificacion: sintaxis JS, seis escenarios Node de visibilidad local/publica, cinco tarjetas dentro del template, categorias, orden de secciones, IDs unicos, anclas y llaves CSS, git diff --check correctos. No se ejecuto navegador; pendiente revision visual local del nuevo bloque.
+- Para completar: confirmar nombres, ubicaciones, contactos, fotos reales y horarios/servicios; sustituir placeholders y pasar fichas verificadas al contenido publico, retirando la previsualizacion temporal al terminar. Historia breve sigue pendiente de analisis.
+- Cambios locales, sin commit, push ni despliegue.

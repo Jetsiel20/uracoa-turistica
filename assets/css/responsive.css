@@ -65,6 +65,10 @@
   .river-feature {
     padding: 4rem 2rem;
   }
+
+  .visit-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 
@@ -101,12 +105,9 @@
     padding-block: 5rem;
   }
 
-  .experience-grid {
+  .experience-grid,
+  .stay-grid {
     grid-template-columns: 1fr;
-  }
-
-  .experience-card {
-    min-height: 200px;
   }
 
   .river-feature {
